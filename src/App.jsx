@@ -123,10 +123,10 @@ function TabResumen({ d }) {
   return (
     <div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(195px, 1fr))", gap: 14, marginBottom: 24 }}>
-        <KpiCard label="Saldo Disponible" value={fmt(r.saldo_disponible)} subtitle={`Al cierre del mes`} color={C.green} dimColor={C.greenDim} icon="💵" />
-        <KpiCard label="Saldo Patrimonial" value={fmt(r.saldo_final)} subtitle="Incluye póliza y ajustes" color={C.accent} icon="🏛️" />
+        <KpiCard label="Saldo Disponible (en miles)" value={fmt(r.saldo_disponible)} subtitle={`Al cierre del mes`} color={C.green} dimColor={C.greenDim} icon="💵" />
+        <KpiCard label="Saldo Patrimonial (en miles)" value={fmt(r.saldo_final)} subtitle="Incluye póliza y ajustes" color={C.accent} icon="🏛️" />
         <KpiCard label="Morosidad" value={morosidad} subtitle={`${r.unidades_morosas} de ${r.total_unidades} unidades`} color={C.red} dimColor={C.redDim} icon="⚠️" />
-        <KpiCard label="Cartera Vencida" value={fmt(r.cxc_total)} subtitle="Total cuentas por cobrar" color={C.amber} dimColor={C.amberDim} icon="📑" />
+        <KpiCard label="Cartera Vencida (en miles)" value={fmt(r.cxc_total)} subtitle="Total cuentas por cobrar" color={C.amber} dimColor={C.amberDim} icon="📑" />
       </div>
 
       <CardBox style={{ marginBottom: 24 }}>
