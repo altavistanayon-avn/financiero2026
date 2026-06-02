@@ -128,7 +128,7 @@ function TabResumen({ d }) {
     <div>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(195px, 1fr))", gap: 14, marginBottom: 24 }}>
         <KpiCard label="Saldo Disponible" value={fmt(r.saldo_disponible)} subtitle={`Al cierre del mes`} color={C.green} dimColor={C.greenDim} icon="💵" />
-        <KpiCard label="Saldo Patrimonial" value={fmt(r.saldo_final)} subtitle="Incluye póliza y ajustes" color={C.accent} icon="🏛️" />
+        <KpiCard label="Saldo Patrimonial" value={fmt(r.saldo_final)} subtitle="Incluye saldo disponible y póliza" color={C.accent} icon="🏛️" />
         <KpiCard label="Morosidad" value={morosidad} subtitle={`${r.unidades_morosas} de ${r.total_unidades} unidades`} color={C.red} dimColor={C.redDim} icon="⚠️" />
         <KpiCard label="Cartera Vencida" value={fmt(r.cxc_total)} subtitle="Total cuentas por cobrar" color={C.amber} dimColor={C.amberDim} icon="📑" />
       </div>
@@ -170,7 +170,7 @@ function TabResumen({ d }) {
 
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))", gap: 14 }}>
         <KpiCard label="Ratio Ingreso/Gasto" value={ratioIG} subtitle="Meta: ≥ 1.5x" color={C.green} dimColor={C.greenDim} icon="📈" />
-        <KpiCard label="Póliza de Reserva" value={fmt(r.poliza)} subtitle="Banco Internacional" color={C.purple} dimColor={C.purpleDim} icon="🔒" />
+        <KpiCard label="Póliza - Inversión" value={fmt(r.poliza)} subtitle="Banco Internacional" color={C.purple} dimColor={C.purpleDim} icon="🔒" />
         <KpiCard label="Anticipos Recibidos" value={fmt(r.anticipos)} subtitle="Alícuotas adelantadas" color={C.accent} icon="⏩" />
         <KpiCard label="Meses de Reserva" value={mesesReserva} subtitle="Con gasto mensual actual" color={C.amber} dimColor={C.amberDim} icon="📅" />
       </div>
