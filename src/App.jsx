@@ -18,7 +18,11 @@ const C = {
 };
 const PIE_COLORS = ["#22d3ee", "#34d399", "#a78bfa", "#fbbf24", "#f87171", "#fb923c", "#2dd4bf", "#818cf8", "#e879f9", "#38bdf8"];
 
-const fmt = (n) => "$" + Number(n || 0).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const fmt = (n) => {
+  const v = Number(n) || 0;
+  if (Math.abs(v) >= 1000) return "$" + v.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  return "$" + v.toFixed(2);
+};
 const fmtK = (n) => "$" + (n / 1000).toFixed(1) + "k";
 const pct = (part, total) => total ? ((part / total) * 100).toFixed(1) + "%" : "0%";
 
